@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Memory", "Library.Memory\Library.Memory.csproj", "{0336FB6C-152D-4AB1-8644-330DB20B8330}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "presentation", "presentation", "{270CC109-F739-48A4-B144-BCE631C7C25E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Web", "Library.Web\Library.Web.csproj", "{1C4ACFAE-E856-4110-BDC5-B72C7FAECF08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,10 @@ Global
 		{0336FB6C-152D-4AB1-8644-330DB20B8330}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0336FB6C-152D-4AB1-8644-330DB20B8330}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0336FB6C-152D-4AB1-8644-330DB20B8330}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C4ACFAE-E856-4110-BDC5-B72C7FAECF08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C4ACFAE-E856-4110-BDC5-B72C7FAECF08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C4ACFAE-E856-4110-BDC5-B72C7FAECF08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C4ACFAE-E856-4110-BDC5-B72C7FAECF08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{27A5D12F-C5D4-4765-A382-26E85CBD75B2} = {A89C6559-EDBC-4C20-A387-3EE934DAAA80}
 		{0336FB6C-152D-4AB1-8644-330DB20B8330} = {0F9F20EB-B014-4DA5-AB48-89E5438A721F}
+		{1C4ACFAE-E856-4110-BDC5-B72C7FAECF08} = {270CC109-F739-48A4-B144-BCE631C7C25E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1D452FB1-7541-4AC4-BBA6-3FB62E63ABA3}
