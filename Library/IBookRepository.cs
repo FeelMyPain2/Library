@@ -6,6 +6,7 @@ namespace Library
 {
     public interface IBookRepository
     {
-        Book[] GetAllByTitle(string titlePart);
+        Book[] GetAllByGenre(string genrePart);
+        Book[] GetAllByTitleOrAuthor(string titleOrAuthor);
     }
 }
