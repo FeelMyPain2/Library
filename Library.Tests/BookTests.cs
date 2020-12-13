@@ -7,10 +7,16 @@ namespace Library.Tests
     [TestFixture]
     class BookTests
     {
-        [Test]
-        public void IsGenre_WithNull_ReturnFalse()
+        [TestCase(null)]
+        [TestCase("Genre")]
+        public void IsGenre_WithNull_ReturnFalse(string query)
         {
-            Assert.IsFalse(Book.IsGenre(null));
+            Assert.IsFalse(Book.IsGenre(query));
+        }
+        [Test]
+        public void IsGenre_Exist_ReturnTrue()
+        {
+            Assert.IsTrue(Book.IsGenre("Tech"));
         }
     }
 }
