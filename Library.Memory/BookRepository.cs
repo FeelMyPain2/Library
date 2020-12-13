@@ -7,9 +7,9 @@ namespace Library.Memory
     {
         private readonly Book[] books =
         {
-            new Book(1,"Tech","Mark Adler","Book #1 foz"),
-            new Book(2,"Tech","Antonio Kass","foz Book #2"),
-            new Book(3,"Tech","Martin Foller","Book #3")
+            new Book(1,"Book #1 foz","Genre2","Mark Adler"),
+            new Book(2,"foz Book #2","Tech","Antonio Kass"),
+            new Book(3,"Book #3","Genre1","Martin Foller")
         };
 
         public Book[] GetAllByGenre(string genrePart)
