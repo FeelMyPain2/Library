@@ -5,21 +5,22 @@ namespace Library.Memory
 {
     public class BookRepository : IBookRepository
     {
-        private readonly Book[] books =
+        readonly Book[] books =
         {
-            new Book(1,"Book #1 foz","Genre2","Mark Adler"),
-            new Book(2,"foz Book #2","Tech","Antonio Kass"),
-            new Book(3,"Book #3","Genre1","Martin Foller")
+            new Book(1,"Book #1 foz","Genre1","Mark Adler"),
+            new Book(2,"Book #3","Genre2","Martin Foller"),
+            new Book(3,"foz Book #2","Tech","Antonio Kass")
         };
 
-        public Book[] GetAllByGenre(string genrePart)
+        public Book[] GetAllByGenre(string genre)
         {
-            return books.Where(book => book.Genre.Contains(genrePart)).ToArray();
+            return books.Where(book => book.Genre == genre).ToArray();
         }
 
         public Book[] GetAllByTitleOrAuthor(string titlePart)
         {
-            return books.Where(book => book.Title.Contains(titlePart)).ToArray();
+            return books.Where(book => book.Title.Contains(titlePart) ||
+                                        book.Author.Contains(titlePart)).ToArray();
         }
     }
 }

@@ -9,14 +9,20 @@ namespace Library.Tests
     {
         [TestCase(null)]
         [TestCase("Genre")]
-        public void IsGenre_WithNull_ReturnFalse(string query)
+        [TestCase("   ")]
+        [TestCase("Tec")]
+        [TestCase("Tech4")]
+        public void IsGenre_Exist_ReturnFalse(string query)
         {
             Assert.IsFalse(Book.IsGenre(query));
         }
-        [Test]
-        public void IsGenre_Exist_ReturnTrue()
+
+        [TestCase("Genre1")]
+        [TestCase("Genre2")]
+        [TestCase("Tech")]
+        public void IsGenre_Exist_ReturnTrie(string query)
         {
-            Assert.IsTrue(Book.IsGenre("Tech"));
+            Assert.IsTrue(Book.IsGenre(query));
         }
     }
 }
