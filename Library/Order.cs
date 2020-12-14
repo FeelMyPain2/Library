@@ -3,7 +3,7 @@ using System.Linq;
 using System;
 namespace Library
 {
-    class Order
+    public class Order
     {
         public int Id { get; }
 
@@ -18,7 +18,7 @@ namespace Library
         }
         public decimal TotalRentalPrice
         {
-            get { return items.Sum(item => item.RentalPrice * item.Count); }
+            get { return Items.Sum(item => item.RentalPrice * item.Count); }
         }
         public Order(int id, IEnumerable<OrderItem> items)
         {
@@ -28,6 +28,24 @@ namespace Library
             }
             Id = id;
             this.items = new List<OrderItem>(items);
+        }
+        public void AddItem(Book book, int count)
+        {
+            if (book == null)
+            {
+                throw new ArgumentNullException(nameof(book));
+            }
+            var item = items.SingleOrDefault(orderItem => orderItem.BookId == book.Id);
+
+            if (item == null)
+            {
+                items.Add(new OrderItem(book.Id, count, book.RentalPrice));
+            }
+            else
+            {
+                items.Remove(item);
+                items.Add(new OrderItem(book.Id, item.Count + count, book.RentalPrice));
+            }
         }
     }
 }

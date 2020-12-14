@@ -7,8 +7,15 @@ namespace Library.Web.Models
 {
     public class RentalCart
     {
-        public IDictionary<int, int> Items { get; set; } = new Dictionary<int, int>();
+        public int OrderId { get; }
+        public int TotalCount { get; set; }
+        public decimal TotalRentalPrice { get; set; }
 
-        public decimal RentalAmount { get; set; }
+        public RentalCart(int orderId)
+        {
+            OrderId = orderId;
+            TotalCount = 0;
+            TotalRentalPrice = 0m;
+        }
     }
 }

@@ -24,7 +24,6 @@ namespace Library.Memory
                                     book.Author.Contains(titlePart)).ToArray();
 
         }
-
         public Book GetById(int id)
         {
             return books.Single(book => book.Id == id);

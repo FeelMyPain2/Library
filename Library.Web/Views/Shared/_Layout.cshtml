@@ -17,15 +17,9 @@
             </form>
             <span class="navbar-text ml-auto">
                 @{
-                    RentalCart cart;
-                    if (!Context.Session.TryGetCart(out cart))
+                    if (Context.Session.TryGetCart(out RentalCart cart) && cart.TotalCount > 0)
                     {
-                        cart = new RentalCart();
-                    }
-
-                    if (cart.Items.Count != 0)
-                    {
-                        @:Items @cart.Items.Count in the amount of @cart.RentalAmount
+                        @:Items @cart.TotalCount in the amount of @(cart.TotalRentalPrice/10)
                     }
                     else
                     {
