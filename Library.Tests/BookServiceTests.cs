@@ -2,6 +2,7 @@ using Moq;
 using NUnit.Framework;
 using Library.Memory;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace Library.Tests
 {
@@ -17,6 +18,12 @@ namespace Library.Tests
         {
             return books.Where(book => book.Genre == genre).ToArray();
         }
+
+        public IEnumerable<Book> GetAllByIds(IEnumerable<int> bookIds)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public Book[] GetAllByTitleOrAuthor(string query)
         {
             return books.Where(book => book.Title.Contains(query) ||

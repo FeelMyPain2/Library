@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Library.Memory
@@ -17,6 +18,7 @@ namespace Library.Memory
             return books.Where(book => book.Genre == genre).ToArray();
         }
 
+
         public Book[] GetAllByTitleOrAuthor(string titlePart)
         {
 
@@ -28,5 +30,13 @@ namespace Library.Memory
         {
             return books.Single(book => book.Id == id);
         }
+        public IEnumerable<Book> GetAllByIds(IEnumerable<int> bookIds)
+        {
+            var foundBooks = from book in books
+                             join bookId in bookIds on book.Id equals bookId
+                             select book;
+            return foundBooks.ToArray();
+        }
+
     }
 }
