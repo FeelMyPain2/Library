@@ -20,6 +20,7 @@ namespace Library
         {
             get { return Items.Sum(item => item.RentalPrice * item.Count); }
         }
+        public DateTime Date { get; set; }
         public Order(int id, IEnumerable<OrderItem> items)
         {
             if (items == null)
@@ -28,6 +29,8 @@ namespace Library
             }
             Id = id;
             this.items = new List<OrderItem>(items);
+            Date = DateTime.Now;
+
         }
         public void AddItem(Book book, int count)
         {
