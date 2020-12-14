@@ -7,9 +7,9 @@ namespace Library.Memory
     {
         readonly Book[] books =
         {
-            new Book(1,"Book #1 foz","Genre1","Mark Adler"),
-            new Book(2,"Book #3","Genre2","Martin Foller"),
-            new Book(3,"foz Book #2","Tech","Antonio Kass")
+            new Book(1,"Book #1 foz","Genre1","Mark Adler","Some description",1.3m ),
+            new Book(2,"Book #3","Genre2","Martin Foller" ,"Some description",2.3m ),
+            new Book(3,"foz Book #2","Tech","Antonio Kass","Some description",3.3m )
         };
 
         public Book[] GetAllByGenre(string genre)
@@ -21,6 +21,11 @@ namespace Library.Memory
         {
             return books.Where(book => book.Title.Contains(titlePart) ||
                                         book.Author.Contains(titlePart)).ToArray();
+        }
+
+        public Book GetById(int id)
+        {
+            return books.Single(book => book.Id == id);
         }
     }
 }
