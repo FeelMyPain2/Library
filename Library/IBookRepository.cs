@@ -9,6 +9,6 @@ namespace Library
         Book[] GetAllByGenre(string genrePart);
         Book[] GetAllByTitleOrAuthor(string titleOrAuthor);
         Book GetById(int id);
-        IEnumerable<Book> GetAllByIds(IEnumerable<int> bookIds);
+        Book[] GetAllByIds(IEnumerable<int> bookIds);
     }
 }

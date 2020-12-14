@@ -8,7 +8,7 @@ namespace Library.Tests
 {
     public class BookRepositoryMock : IBookRepository
     {
-        readonly Book[] books =
+        public readonly Book[] books =
         {
             new Book(1,"Book #1 foz","Genre1","Mark Adler","Some description",1.3m ),
             new Book(2,"Book #3","Genre2","Martin Foller" ,"Some description",2.3m ),
@@ -19,9 +19,12 @@ namespace Library.Tests
             return books.Where(book => book.Genre == genre).ToArray();
         }
 
-        public IEnumerable<Book> GetAllByIds(IEnumerable<int> bookIds)
+        public Book[] GetAllByIds(IEnumerable<int> bookIds)
         {
-            throw new System.NotImplementedException();
+            var foundBooks = from book in books
+                             join bookId in bookIds on book.Id equals bookId
+                             select book;
+            return foundBooks.ToArray();
         }
 
         public Book[] GetAllByTitleOrAuthor(string query)
