@@ -21,7 +21,7 @@
         @for (int i = 0; i < Model.Items.Length; i++)
         {
             <tr>
-                <td class="text-right">@(i + 1)</td>
+                <td>@(i + 1)</td>
                 <td>@Model.Items[i].Author</td>
                 <td>@Model.Items[i].Title</td>
                 <td class="text-right">@Model.Items[i].Count</td>
@@ -34,6 +34,10 @@
             <td colspan="3" class="text-right">Total cost</td>
             <td class="text-right">@Model.TotalCount</td>
             <td class="text-right">@Model.TotalRentalPrice</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="text-right">Rental time</td>
+            <td colspan="2" class="text-right">@Model.Date</td>
         </tr>
     </tfoot>
 </table>

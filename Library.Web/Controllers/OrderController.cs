@@ -77,6 +77,7 @@ namespace Library.Web.Controllers
                 Items = itemModels.ToArray(),
                 TotalCount = order.TotalCount,
                 TotalRentalPrice = order.TotalRentalPrice,
+                Date = order.Date
             };
         }
     }

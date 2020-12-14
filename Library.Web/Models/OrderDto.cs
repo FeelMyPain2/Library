@@ -11,5 +11,7 @@ namespace Library.Web.Models
         public OrderItemDto[] Items { get; set; } = new OrderItemDto[0];
         public int TotalCount { get; set; }
         public decimal TotalRentalPrice { get; set; }
+
+        public DateTime Date { get; set; }
     }
 }
