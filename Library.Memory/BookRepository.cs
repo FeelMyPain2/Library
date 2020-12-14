@@ -19,8 +19,10 @@ namespace Library.Memory
 
         public Book[] GetAllByTitleOrAuthor(string titlePart)
         {
+
             return books.Where(book => book.Title.Contains(titlePart) ||
-                                        book.Author.Contains(titlePart)).ToArray();
+                                    book.Author.Contains(titlePart)).ToArray();
+
         }
 
         public Book GetById(int id)
