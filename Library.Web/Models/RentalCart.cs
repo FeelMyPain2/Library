@@ -15,7 +15,7 @@ namespace Library.Web.Models
         {
             OrderId = orderId;
             TotalCount = 0;
-            TotalRentalPrice = 0m;
+            TotalRentalPrice = 0.0m;
         }
     }
 }

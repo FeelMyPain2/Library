@@ -35,7 +35,7 @@ namespace Library.Web
                 {
                     var orderId = reader.ReadInt32();
                     var totalCount = reader.ReadInt32();
-                    var totalRentalPrice = reader.ReadInt32();
+                    var totalRentalPrice = reader.ReadDecimal();
 
                     value = new RentalCart(orderId)
                     {

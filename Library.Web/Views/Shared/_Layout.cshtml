@@ -19,7 +19,7 @@
                 @{
                     if (Context.Session.TryGetCart(out RentalCart cart) && cart.TotalCount > 0)
                     {
-                        @:Items @cart.TotalCount in the amount of @(cart.TotalRentalPrice/10)
+                        @:Items @cart.TotalCount in the amount of @cart.TotalRentalPrice
                     }
                     else
                     {
