@@ -66,10 +66,6 @@ namespace Library.Tests
 
         }
 
-        [Test]
-        public void GetBookById()
-        {
-            Assert.AreEqual(new BookRepositoryMock().GetById(1).Author, "Mark Adler");
-        }
+
     }
 }
