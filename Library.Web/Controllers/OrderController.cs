@@ -80,6 +80,30 @@ namespace Library.Web.Controllers
                 Date = order.Date
             };
         }
+
+        public IActionResult RemoveItem(int id)
+        {
+            Order order;
+            RentalCart cart;
+            if (HttpContext.Session.TryGetCart(out cart))
+            {
+                order = orderRepository.GetById(cart.OrderId);
+            }
+            else
+            {
+                order = orderRepository.Create();
+                cart = new RentalCart(order.Id);
+            }
+
+            var book = bookRepository.GetById(id);
+            order.RemoveItem(book, 1);
+            orderRepository.Update(order);
+
+            cart.TotalCount = order.TotalCount;
+            cart.TotalRentalPrice = order.TotalRentalPrice;
+            HttpContext.Session.Set(cart);
+            return RedirectToAction("Index");
+        }
     }
 }
 

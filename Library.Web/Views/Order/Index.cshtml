@@ -26,6 +26,12 @@
                 <td>@Model.Items[i].Title</td>
                 <td class="text-right">@Model.Items[i].Count</td>
                 <td class="text-right">@Model.Items[i].RentalPrice</td>
+                <td class="text-center">
+                    <form class="form-inline" action="@Url.Action("RemoveItem", "Order")" method="post">
+                        <input type="hidden" name="id" value="@Model.Items[i].BookId" />
+                        <button class="text-right" type="submit">Delete from order</button>
+                    </form>
+                </td>
             </tr>
         }
     </tbody>

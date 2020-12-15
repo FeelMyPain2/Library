@@ -50,5 +50,38 @@ namespace Library
                 items.Add(new OrderItem(book.Id, item.Count + count, book.RentalPrice));
             }
         }
+        public void RemoveItem(Book book, int count)
+        {
+            if (book == null)
+                throw new ArgumentNullException(nameof(book));
+
+            if (items.Count == 0)
+                throw new InvalidOperationException("Rental cart must contain items");
+
+            var item = items.SingleOrDefault(x => x.BookId == book.Id);
+            if (item == null)
+                throw new InvalidOperationException("Rental cart does not contain item with ID: " + book.Id);
+
+            items.Remove(item);
+            if (item.Count - count == 0)
+                return;
+
+            items.Add(new OrderItem(book.Id, item.Count - count, book.RentalPrice));
+        }
+
+        public void RemoveItems(Book book)
+        {
+            if (book == null)
+                throw new ArgumentNullException(nameof(book));
+
+            if (items.Count == 0)
+                throw new InvalidOperationException("Rental cart must contain items");
+
+            var item = items.SingleOrDefault(x => x.BookId == book.Id);
+            if (item == null)
+                throw new InvalidOperationException("Rental cart does not contain item with ID: " + book.Id);
+
+            items.RemoveAll(x => x.BookId == book.Id);
+        }
     }
 }

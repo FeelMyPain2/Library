@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using NUnit.Framework;
+using System.Linq;
 
 namespace Library.Tests
 {
@@ -39,7 +40,11 @@ namespace Library.Tests
         {
             Assert.AreEqual(1 + 3 + 1, standardOrder.TotalCount);
         }
-
+        [Test]
+        public void StandardOrderBookWithSecondIdCount()
+        {
+            Assert.AreEqual(3, standardOrder.Items.Single(item => item.BookId == 2).Count);
+        }
         [Test]
         public void AddNullAsNewBook()
         {

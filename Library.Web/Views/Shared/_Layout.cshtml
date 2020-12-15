@@ -10,7 +10,12 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><strong>Rent/Use/Return</strong></a>
+            <a class="navbar-brand border" asp-area="" asp-controller="Home" asp-action="Index"><strong>Rent/Use/Return</strong></a>
+            <a class="navbar-brand border" asp-area="" asp-controller="Customer" asp-action="Index"><strong>Customers</strong></a>
+            <a class="navbar-brand border" asp-area="" asp-controller="Book" asp-action="Index"><strong>Books</strong></a>
+            <a class="navbar-brand border" asp-area="" asp-controller="Order" asp-action="Index"><strong>My order</strong></a>
+
+
             <form class="form-inline my-2 my-lg-0" action="@Url.Action("Index","Search")" method="get">
                 <input class="form-control mr-sm-2" type="search" name="query" placeholder="Genre/Title/Author" required />
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
